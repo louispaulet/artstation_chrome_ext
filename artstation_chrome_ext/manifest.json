@@ -1,6 +1,6 @@
 {
   "manifest_version": 2,
-  "name": "My Extension",
+  "name": "Artstation Upload faster",
   "version": "1.0",
   "description": "Fill fields on ArtStation",
   "permissions": ["activeTab"],
@@ -16,5 +16,8 @@
   },
   "icons": {
     "16": "icon16.png"
-  }
+  },
+  "web_accessible_resources": [
+    "filename_to_prompt.json"
+  ]
 }
