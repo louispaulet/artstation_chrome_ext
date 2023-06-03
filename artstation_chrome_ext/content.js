@@ -6,6 +6,10 @@ chrome.runtime.onMessage.addListener(function(message, sender, sendResponse) {
 
     if (textareaField && inputField) {
       loadJsonFile("filename_to_prompt.json").then(function(data) {
+          
+        if (message.value.endsWith("-0000")) {
+            message.value = message.value.slice(0, -5);
+        }
         if (data.prompt.hasOwnProperty(message.value)) {
             
           inputField.value = (data.prompt[message.value]).substring(0, 100);  
