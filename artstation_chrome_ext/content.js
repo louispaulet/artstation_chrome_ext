@@ -4,11 +4,11 @@ chrome.runtime.onMessage.addListener(function(message, sender, sendResponse) {
     var inputField = document.querySelector('input[type="text"][name="title"]');
     var textareaField = document.querySelector('textarea[name="description"]');
     if (inputField) {
-      inputField.value = config.title;
+      inputField.value = message.value;  // Use the value from the message
       inputField.dispatchEvent(new Event('input', { bubbles: true })); // Trigger the 'input' event for validation
     }
     if (textareaField) {
-      textareaField.value = config.title;
+      textareaField.value = message.value;  // Use the value from the message
       textareaField.dispatchEvent(new Event('input', { bubbles: true })); // Trigger the 'input' event for validation
     }
   }
